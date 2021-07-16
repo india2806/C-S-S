@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dark UI Clock</title>
+        <link rel="stylesheet" href="style.css">
+        
+
+
+    </head>
+    <body>
+        <div class="clock">
+            <div class="hour">
+                <div class="hr" id ="hr"></div>
+            </div>
+            <div class="minute">
+                <div class="mn" id ="mn"></div>
+            </div>
+            <div class="second">
+                <div class="sec" id="sec"></div>
+            </div>
+        </div>
+
+        <script>
+
+         const deg = 6;
+         const hr = document.querySelector('#hr');
+         const mn = document.querySelector('#mn');
+         const sec = document.querySelector('#sec');
+
+         setInterval(() => {
+
+         let day = new Date();
+         let hh = day.getHours() * 30;
+         let mm = day.getMinutes() * deg;
+         let ss = day.getSeconds() * deg;
+
+         hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+         mn.style.transform = `rotateZ(${mm}deg)`;
+         sec.style.transform = `rotateZ(${ss}deg)`;
+
+        }) 
+
+        </script>
+        
+    </body>
+</html>
