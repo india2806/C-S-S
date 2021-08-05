@@ -20,7 +20,7 @@ section
 section .content
 {
     max-width: 80%;
-    color:#fff;
+    color:chartreuse;
 }
 
 section .content h2
